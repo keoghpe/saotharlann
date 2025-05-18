@@ -1,8 +1,8 @@
 class Lab < ApplicationRecord
-  enum status: {
+  enum :status, {
     idea: "idea",
     planned: "planned",
-    in_progress: "in-progress",
+    in_progress: "in_progress",
     completed: "completed"
   }
 end
