@@ -1,11 +1,15 @@
-<h1><%= @lab.title %></h1>
-
-<p><strong>Description:</strong> <%= @lab.description %></p>
-<p><strong>Status:</strong> <%= @lab.status %></p>
-<p><strong>Estimate (hours):</strong> <%= @lab.estimate_in_hours %></p>
-<p><strong>Time Spent (seconds):</strong> <%= @lab.time_spent_in_seconds %></p>
-<p><strong>Date Started:</strong> <%= @lab.date_started %></p>
-<p><strong>Date Completed:</strong> <%= @lab.date_completed %></p>
-
-<%= link_to 'Edit', edit_lab_path(@lab) %> |
-<%= link_to 'Back', labs_path %> 
+<div class="max-w-2xl mx-auto py-8 px-4">
+  <div class="bg-white rounded shadow p-6">
+    <h1 class="text-2xl font-bold mb-4"><%= @lab.title %></h1>
+    <div class="mb-2"><span class="font-semibold">Description:</span> <%= @lab.description %></div>
+    <div class="mb-2"><span class="font-semibold">Status:</span> <%= @lab.status %></div>
+    <div class="mb-2"><span class="font-semibold">Estimate (hours):</span> <%= @lab.estimate_in_hours %></div>
+    <div class="mb-2"><span class="font-semibold">Time Spent (seconds):</span> <%= @lab.time_spent_in_seconds %></div>
+    <div class="mb-2"><span class="font-semibold">Date Started:</span> <%= @lab.date_started %></div>
+    <div class="mb-4"><span class="font-semibold">Date Completed:</span> <%= @lab.date_completed %></div>
+    <div class="flex gap-4">
+      <%= link_to 'Edit', edit_lab_path(@lab), class: 'px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition' %>
+      <%= link_to 'Back', labs_path, class: 'px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition' %>
+    </div>
+  </div>
+</div> 

@@ -1,8 +1,8 @@
 <%= form_with(model: lab, local: true) do |form| %>
   <% if lab.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(lab.errors.count, "error") %> prohibited this lab from being saved:</h2>
-      <ul>
+    <div class="mb-4 p-4 bg-red-100 border border-red-300 rounded">
+      <h2 class="font-semibold text-red-700 mb-2"><%= pluralize(lab.errors.count, "error") %> prohibited this lab from being saved:</h2>
+      <ul class="list-disc list-inside text-red-600">
         <% lab.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
@@ -10,42 +10,37 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <%= form.label :title, class: 'block font-medium mb-1' %>
+      <%= form.text_field :title, class: 'w-full border-gray-300 rounded px-3 py-2 focus:ring focus:ring-blue-200' %>
+    </div>
+    <div>
+      <%= form.label :status, class: 'block font-medium mb-1' %>
+      <%= form.select :status, options_for_select([['Idea', 'idea'], ['Planned', 'planned'], ['In Progress', 'in-progress'], ['Completed', 'completed']], lab.status || 'idea'), {}, { class: 'w-full border-gray-300 rounded px-3 py-2 focus:ring focus:ring-blue-200' } %>
+    </div>
+    <div class="md:col-span-2">
+      <%= form.label :description, class: 'block font-medium mb-1' %>
+      <%= form.text_area :description, class: 'w-full border-gray-300 rounded px-3 py-2 focus:ring focus:ring-blue-200', rows: 3 %>
+    </div>
+    <div>
+      <%= form.label :estimate_in_hours, 'Estimate (hours)', class: 'block font-medium mb-1' %>
+      <%= form.number_field :estimate_in_hours, class: 'w-full border-gray-300 rounded px-3 py-2 focus:ring focus:ring-blue-200' %>
+    </div>
+    <div>
+      <%= form.label :time_spent_in_seconds, 'Time Spent (seconds)', class: 'block font-medium mb-1' %>
+      <%= form.number_field :time_spent_in_seconds, class: 'w-full border-gray-300 rounded px-3 py-2 focus:ring focus:ring-blue-200' %>
+    </div>
+    <div>
+      <%= form.label :date_started, class: 'block font-medium mb-1' %>
+      <%= form.date_field :date_started, class: 'w-full border-gray-300 rounded px-3 py-2 focus:ring focus:ring-blue-200' %>
+    </div>
+    <div>
+      <%= form.label :date_completed, class: 'block font-medium mb-1' %>
+      <%= form.date_field :date_completed, class: 'w-full border-gray-300 rounded px-3 py-2 focus:ring focus:ring-blue-200' %>
+    </div>
   </div>
-
-  <div>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.label :status %><br>
-    <%= form.select :status, options_for_select([['Idea', 'idea'], ['Planned', 'planned'], ['In Progress', 'in-progress'], ['Completed', 'completed']], lab.status || 'idea') %>
-  </div>
-
-  <div>
-    <%= form.label :estimate_in_hours, 'Estimate (hours)' %><br>
-    <%= form.number_field :estimate_in_hours %>
-  </div>
-
-  <div>
-    <%= form.label :time_spent_in_seconds, 'Time Spent (seconds)' %><br>
-    <%= form.number_field :time_spent_in_seconds %>
-  </div>
-
-  <div>
-    <%= form.label :date_started %><br>
-    <%= form.date_field :date_started %>
-  </div>
-
-  <div>
-    <%= form.label :date_completed %><br>
-    <%= form.date_field :date_completed %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="mt-6">
+    <%= form.submit class: 'px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition' %>
   </div>
 <% end %> 
