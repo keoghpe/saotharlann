@@ -1,5 +1,5 @@
-<div class="max-w-2xl mx-auto py-8 px-4">
-  <div class="bg-white rounded shadow p-6">
+<div class="max-w-2xl mx-auto py-8 px-4 bg-gray-900 text-gray-100 min-h-screen">
+  <div class="bg-gray-800 rounded shadow p-6">
     <h1 class="text-2xl font-bold mb-4"><%= @lab.title %></h1>
     <div class="mb-2"><span class="font-semibold">Description:</span> <%= @lab.description %></div>
     <div class="mb-2"><span class="font-semibold">Status:</span> <%= @lab.status %></div>
@@ -9,7 +9,7 @@
     <div class="mb-4"><span class="font-semibold">Date Completed:</span> <%= @lab.date_completed %></div>
     <div class="flex gap-4">
       <%= link_to 'Edit', edit_lab_path(@lab), class: 'px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition' %>
-      <%= link_to 'Back', labs_path, class: 'px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition' %>
+      <%= link_to 'Back', labs_path, class: 'px-4 py-2 bg-gray-700 text-gray-100 rounded hover:bg-gray-600 transition' %>
     </div>
   </div>
 </div> 
