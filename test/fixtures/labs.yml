@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  status: MyString
+  estimate: 1
+  time_spent: 1
+  date_started: 2025-05-18
+  date_completed: 2025-05-18
+
+two:
+  title: MyString
+  description: MyText
+  status: MyString
+  estimate: 1
+  time_spent: 1
+  date_started: 2025-05-18
+  date_completed: 2025-05-18

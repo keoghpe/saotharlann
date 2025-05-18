@@ -1,0 +1,35 @@
+<h1>Labs</h1>
+
+<%= link_to 'New Lab', new_lab_path, class: 'button' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Estimate (hrs)</th>
+      <th>Time Spent (s)</th>
+      <th>Date Started</th>
+      <th>Date Completed</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @labs.each do |lab| %>
+      <tr>
+        <td><%= lab.title %></td>
+        <td><%= lab.description %></td>
+        <td><%= lab.status %></td>
+        <td><%= lab.estimate_in_hours %></td>
+        <td><%= lab.time_spent_in_seconds %></td>
+        <td><%= lab.date_started %></td>
+        <td><%= lab.date_completed %></td>
+        <td>
+          <%= link_to 'Edit', edit_lab_path(lab) %> |
+          <%= link_to 'Delete', lab, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> 

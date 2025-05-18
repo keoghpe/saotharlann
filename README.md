@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Here are some feature ideas to track and manage your personal labs:
 
-Things you may want to cover:
+Core Features
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Lab List & Details
+  - Title, description, tags (e.g., frontend, systems, AI, etc.)
+  - Tech stack/tools used
+  - Skill level or area (e.g., system design, testing, etc.)
+  - Status: planned / in-progress / completed
+  - Time estimate & time spent
+  - Date started / completed
+- Progress Tracking
+  - Notes/journaling field per lab
+  - GitHub repo link
+  - Screenshots or demo link uploads
+  - Lessons learned
+- Categorization
+  - Filter/sort/search by skill area or tech stack
+  - Priority ranking
+- Bonus Features
+  - Markdown support for notes
+  - Lab dependencies (e.g., “do X before Y”)
+  - Export to markdown or PDF

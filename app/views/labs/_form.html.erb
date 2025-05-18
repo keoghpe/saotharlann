@@ -1,0 +1,51 @@
+<%= form_with(model: lab, local: true) do |form| %>
+  <% if lab.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lab.errors.count, "error") %> prohibited this lab from being saved:</h2>
+      <ul>
+        <% lab.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :status %><br>
+    <%= form.select :status, options_for_select([['Idea', 'idea'], ['Planned', 'planned'], ['In Progress', 'in-progress'], ['Completed', 'completed']], lab.status || 'idea') %>
+  </div>
+
+  <div>
+    <%= form.label :estimate_in_hours, 'Estimate (hours)' %><br>
+    <%= form.number_field :estimate_in_hours %>
+  </div>
+
+  <div>
+    <%= form.label :time_spent_in_seconds, 'Time Spent (seconds)' %><br>
+    <%= form.number_field :time_spent_in_seconds %>
+  </div>
+
+  <div>
+    <%= form.label :date_started %><br>
+    <%= form.date_field :date_started %>
+  </div>
+
+  <div>
+    <%= form.label :date_completed %><br>
+    <%= form.date_field :date_completed %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %> 
