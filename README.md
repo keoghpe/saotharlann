@@ -23,3 +23,14 @@ Core Features
   - Markdown support for notes
   - Lab dependencies (e.g., “do X before Y”)
   - Export to markdown or PDF
+
+### Steps to run on Minikube
+
+```
+eval $(minikube docker-env)
+docker build -t saotharlann .
+kubectl apply -f saotharlann-deployment.yaml
+kubectl expose deployment saotharlann --type=NodePort --port=3000
+kubectl get svc saotharlann
+minikube ip
+```
