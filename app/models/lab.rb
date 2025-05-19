@@ -1,4 +1,6 @@
 class Lab < ApplicationRecord
+  has_many :notes, dependent: :destroy
+
   enum :status, {
     idea: "idea",
     planned: "planned",

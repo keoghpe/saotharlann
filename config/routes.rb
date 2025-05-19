@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "labs#index"
 
-  resources :labs
+  resources :labs do
+    resources :notes, only: [ :create, :destroy ]
+  end
 end
