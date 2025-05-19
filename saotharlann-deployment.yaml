@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: saotharlann
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: saotharlann
+  template:
+    metadata:
+      labels:
+        app: saotharlann
+    spec:
+      containers:
+        - name: saotharlann
+          image: saotharlann
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3000
+          env:
+            - name: RAILS_ENV
+              value: "production"
+            - name: SECRET_KEY_BASE
+              valueFrom:
+                secretKeyRef:
+                  name: saotharlann-secrets
+                  key: SECRET_KEY_BASE
